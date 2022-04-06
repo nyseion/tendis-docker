@@ -1,0 +1,29 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8035ac26..36127dc7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,7 +37,7 @@ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCC)
+ 	set(STDFS_LIB "stdc++fs")
+-    option(NEW_ROCKSDB "new rocksdb version" OFF)
++	option(NEW_ROCKSDB "new rocksdb version" ON)
+     if(NEW_ROCKSDB)
+         message("using rocksdb-6.14.5")
+         set(ROCKSDB_DIR "${PROJECT_SOURCE_DIR}/src/thirdparty/rocksdb")
+@@ -189,7 +189,6 @@ set(WARN_C_CXX
+ -Werror=format-nonliteral \
+ -Werror=missing-include-dirs \
+ -Werror=overflow \
+--Werror=parentheses \
+ -Werror=reorder \
+ -Werror=return-type \
+ -Werror=sequence-point \
+@@ -203,6 +202,7 @@ set(WARN_C_CXX
+ -Werror=unused-result \
+ -Werror=unused-value \
+ -Werror=unused-variable \
++-Wno-error=format-truncation \
+ -Werror=write-strings")
+ 
+ set(WARN_CXX_ONLY
